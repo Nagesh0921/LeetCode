@@ -20,3 +20,31 @@ class Solution {
 
 //Runtime: 0 ms, faster than 100.00% of Java online submissions for Two Sum.
 //Memory Usage: 38.8 MB, less than 92.80% of Java online submissions for Two Sum.
+
+//This can be further optimized using: Two Pointers if the given array is SORTED!!!
+
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        int left=0, right=numbers.length-1;
+        
+        while(left<right){
+            int currentSum = numbers[left]+numbers[right];
+            if(currentSum == target){
+                return new int[]{left+1,right+1};
+            }
+            if(currentSum > target){
+                right--;
+            } else {
+                left++;
+            }
+        }
+        return null;
+    }
+}
+
+//Time Complexity O(N) and Space Complexity O(1)
+//Runtime: 0 ms, faster than 100.00% of Java online submissions for Two Sum II - Input array is sorted.
+//Memory Usage: 39.4 MB, less than 32.58% of Java online submissions for Two Sum II - Input array is sorted.
+
+
+
