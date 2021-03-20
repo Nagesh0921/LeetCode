@@ -24,3 +24,6 @@ class Solution {
 
 //Time Complexity O(nLog n) Space Complexity O(N)
 //This is real life exmaple of finding nearest shops to your location!!!
+//Runtime: 10 ms, faster than 83.94% of Java online submissions for K Closest Points to Origin.
+//Memory Usage: 47.6 MB, less than 57.18% of Java online submissions for K Closest Points to Origin.
+
