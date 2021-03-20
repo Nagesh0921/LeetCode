@@ -30,3 +30,31 @@ class Solution {
 //Runtime: 11 ms, faster than 49.71% of Java online submissions for Top K Frequent Elements.
 //Memory Usage: 41.7 MB, less than 47.47% of Java online submissions for Top K Frequent Elements.
 
+class Solution {
+    public int[] topKFrequent(int[] nums, int k) {
+        int len = nums.length;
+        if(len == k){
+            return nums;
+        }
+        HashMap<Integer, Integer> elements = new HashMap<>();
+        for(Integer n : nums){
+            elements.put(n, elements.getOrDefault(n, 0)+1);
+        }
+        
+        PriorityQueue<Integer> heap = new PriorityQueue<>((n1, n2)-> elements.get(n1) - elements.get(n2));
+        int[] res = new int[k];
+        for(Integer n : elements.keySet()){
+            heap.add(n);
+            if(heap.size() > k){
+                heap.poll();
+            }
+        }
+        for(int i=k-1; i>=0; i--){
+            res[i] = heap.poll();
+        }
+        return res;
+    }
+}
+
+//Runtime: 9 ms, faster than 86.02% of Java online submissions for Top K Frequent Elements.
+//Memory Usage: 41.7 MB, less than 47.47% of Java online submissions for Top K Frequent Elements.
