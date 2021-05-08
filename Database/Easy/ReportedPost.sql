@@ -6,5 +6,5 @@ and extra is not null
 and action='report'
 group by action_date,extra;
 
-//Runtime: 2690 ms, faster than 65.99% of MS SQL Server online submissions for Reported Posts.
-//Memory Usage: 0B, less than 100.00% of MS SQL Server online submissions for Reported Posts.
+--Runtime: 2690 ms, faster than 65.99% of MS SQL Server online submissions for Reported Posts.
+--Memory Usage: 0B, less than 100.00% of MS SQL Server online submissions for Reported Posts.
