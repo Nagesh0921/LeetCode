@@ -53,16 +53,17 @@ class Bucket{
     }
     
     public void update(Integer key, Integer value){
-        if(this.containers.isEmpty()){
-            this.containers.add(new Pair<Integer, Integer>(key, value));
-        }
+        boolean found = false;
         for(Pair<Integer, Integer> p : this.containers){
             if(p.key.equals(key)){
                 p.value = value;
-            } else {
-                this.containers.add(new Pair<Integer, Integer>(key, value));
+                found = true;
             }
         }
+        if(!found){
+            this.containers.add(new Pair<Integer, Integer>(key, value));
+        }
+        
     }
     
     public void remove(Integer key){
