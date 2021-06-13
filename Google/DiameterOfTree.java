@@ -22,6 +22,7 @@ class Solution {
     }
     
     public int longestPath(TreeNode node){
+        //We will choose Post Order here as value path at Parent Node is important
         if(node == null){
             return 0;
         }
